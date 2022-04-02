@@ -155,6 +155,58 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://heblog.ekcing.com/2022/04/02/hexo-d-github-ssh%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="KCing">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="KCing">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2022/04/02/hexo-d-github-ssh%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/" itemprop="url">hexo d github ssh验证失败</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-04-02T10:54:36+08:00">2022-04-02 10:54:36</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/2022-04/" itemprop="url" rel="index"><span itemprop="name">2022-04</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><strong>Hexo与GitHub关联</strong><br>打开blog根目录下的配置文件_config.yml<br>翻到最下边，将内容修改为：</p>
+<figure class="hljs highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址(如我的是https:<span class="comment">//github.com/xxx/xxx.github.io)</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+
+<p>但是之后执行 hexo d 命令时一直需要验证github账户，即使输入账户密码也会提示失败。</p>
+<p>解决方法：<br>修改上面的文件内容：</p>
+<figure class="hljs highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> ssh:<span class="comment">//git@github.com/xxx/xxx.github.io.git</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+
+<p>将 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 修改为 ssh:&#x2F;&#x2F;<a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a> 。<br>保存重新执行 hexo d 命令即可上传成功。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://heblog.ekcing.com/2022/04/01/test-my-site/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="KCing">

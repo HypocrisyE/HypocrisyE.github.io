@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>hexo d github ssh验证失败</title>
+      <link href="/2022/04/02/hexo-d-github-ssh%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/"/>
+      <url>/2022/04/02/hexo-d-github-ssh%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Hexo与GitHub关联</strong><br>打开blog根目录下的配置文件_config.yml<br>翻到最下边，将内容修改为：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址(如我的是https:<span class="comment">//github.com/xxx/xxx.github.io)</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure><p>但是之后执行 hexo d 命令时一直需要验证github账户，即使输入账户密码也会提示失败。</p><p>解决方法：<br>修改上面的文件内容：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> ssh:<span class="comment">//git@github.com/xxx/xxx.github.io.git</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure><p>将 <a href="https://github.com/">https://github.com</a> 修改为 ssh:&#x2F;&#x2F;<a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a> 。<br>保存重新执行 hexo d 命令即可上传成功。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2022-04 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test_my_site</title>
       <link href="/2022/04/01/test-my-site/"/>
       <url>/2022/04/01/test-my-site/</url>
